@@ -20,9 +20,12 @@ switch, and thus all their contributions are dual-licensed.
 - Alex Willmer <alex@moreati.org.uk> (gh: @moreati) **R**
 - Alexander Brugh <alexander.brugh@MASKED> (gh: @abrugh)
 - Alistair McMaster <alistair@MASKED> (gh: @alimcmaster1 ) **D**
+- Allison Quinlan <aquinlan82@gmail.com> (gh: @aquinlan) **D**
 - Andrew Bennett (gh: @andrewcbennett) **D**
 - Andrew Murray <radarhere@MASKED>
+- Aritro Nandi <gurgenz221@gmail.com> (gh: @gurgenz221) **D**
 - Bernat Gabor <bgabor8@bloomberg.net> (gh: @gaborbernat) **D**
+- Bradlee Speice <bradlee@speice.io> (gh: @bspeice) **D**
 - Brandon W Maister <quodlibetor@MASKED>
 - Brock Mendel <jbrockmendel@MASKED> (gh: @jbrockmendel) **R**
 - Brook Li (gh: @absreim) **D**
@@ -40,13 +43,17 @@ switch, and thus all their contributions are dual-licensed.
 - Dominik Kozaczko <dominik@MASKED>
 - Elliot Hughes <elliot.hughes@gmail.com> (gh: @ElliotJH) **D**
 - Elvis Pranskevichus <el@MASKED>
+- Fan Huang <fanhuang.scb@gmail.com>(gh: @fhuang5) **D**
 - Florian Rathgeber (gh: @kynan) **D**
 - Gabriel Bianconi <gabriel@MASKED> (gh: @GabrielBianconi) **D**
 - Gabriel Poesia <gabriel.poesia@MASKED>
+- Gökçen Nurlu <gnurlu1@bloomberg.net> (gh: @gokcennurlu) **D**
+- Grant Garrett-Grossman <grantlycee@gmail.com> (gh: @FakeNameSE) **D**
 - Gustavo Niemeyer <gustavo@niemeyer.net> (gh: @niemeyer)
 - Holger Joukl <holger.joukl@MASKED> (gh: @hjoukl)
 - Igor <mrigor83@MASKED>
 - Ionuț Ciocîrlan <jdxlark@MASKED>
+- Jacqueline Chen <jacqueline415@outlook.com> (gh: @jachen20) **D**
 - Jake Chorley (gh: @jakec-github) **D**
 - Jan Studený <jendas1@MASKED>
 - Jay Weisskopf <jay@jayschwa.net> (gh: @jayschwa) **D**
@@ -62,6 +69,7 @@ switch, and thus all their contributions are dual-licensed.
 - Luca Ferocino <luca.ferox@MASKED> (gh: @lucaferocino) **D**
 - Mario Corchero <mcorcherojim@MASKED> (gh: @mariocj89) **R**
 - Mateusz Dziedzic (gh: @m-dz) **D**
+- Matt Cooper <vtbassmatt@MASKED> (gh: @vtbassmatt) **D**
 - Matthew Schinckel <matt@MASKED>
 - Max Shenfield <shenfieldmax@MASKED>
 - Maxime Lorant <maxime.lorant@MASKED>
@@ -69,6 +77,7 @@ switch, and thus all their contributions are dual-licensed.
 - Michael J. Schultz <mjschultz@MASKED>
 - Mike Gilbert <floppym@MASKED>
 - Nicholas Herrriot <Nicholas.Herriot@gmail.com> **D**
+- Nicolas Évrard (gh: @nicoe) **D**
 - Nick Smith <nick.smith@MASKED>
 - Orson Adams <orson.network@MASKED> (gh: @parsethis) **D**
 - Paul Dickson (gh @prdickson) **D**
@@ -86,6 +95,7 @@ switch, and thus all their contributions are dual-licensed.
 - Savraj <savraj@MASKED>
 - Sergey Vishnikin <armicron@MASKED>
 - Sherry Zhou (gh: @cssherry) **D**
+- Siping Meng (gh: @smeng10) **D**
 - Stefan Bonchev **D**
 - Thierry Bastian <thierryb@MASKED>
 - Thomas A Caswell <tcaswell@MASKED> (gh: @tacaswell) **R**
@@ -103,6 +113,7 @@ switch, and thus all their contributions are dual-licensed.
 - bachmann <bachmann.matt@MASKED>
 - bjv <brandon.vanvaerenbergh@MASKED> (@bjamesvERT)
 - gl <gl@MASKED>
+- gfyoung <gfyoung17@gmail.com> **D**
 - labrys <labrys@MASKED> (gh: @labrys) **R**
 - ms-boom <ms-boom@MASKED>
 - ryanss <ryanssdev@MASKED> (gh: @ryanss) **R**

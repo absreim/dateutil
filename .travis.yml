@@ -25,17 +25,21 @@ matrix:
       # can run Python 3.7
       dist: xenial
       sudo: required
+    - python: 3.7
+      env: TOXENV=build
+      dist: xenial
   allow_failures:
     - python: "nightly"
 
 install:
-  - pip install -U six && pip install -U tox
+  - pip install -U six && pip install -U 'tox<3.8.0'
   - if [[ $TRAVIS_PYTHON_VERSION == "3.3" ]]; then pip install 'virtualenv<16.0'; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == "3.3" ]]; then pip install 'setuptools<40.0'; fi
   - if [[ $TOXENV == "py" ]]; then ./ci_tools/retry.sh python updatezinfo.py; fi
 
 script:
   - tox
+  - if [[ $TOXENV == "build" ]]; then [ ! -e "dist/*.whl" ] && [ ! -e "dist/*.tar.gz" ]; fi
 
 after_success:
   - if [[ $TOXENV == "py" ]]; then tox -e coverage,codecov; fi
-
