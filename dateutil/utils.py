@@ -7,6 +7,8 @@ datetimes.
 """
 from __future__ import unicode_literals
 
+import datetime as datetime_module
+
 from datetime import datetime, time
 
 
@@ -69,3 +71,24 @@ def within_delta(dt1, dt2, delta):
     delta = abs(delta)
     difference = dt1 - dt2
     return -delta <= difference <= delta
+
+
+class FakeDatetime(datetime):
+    @classmethod
+    def set_frozen_datetime(cls, frozen_datetime):
+        cls.frozen_datetime = frozen_datetime
+
+    @classmethod
+    def now(cls):
+        return cls.frozen_datetime
+
+
+def freeze_time(datetime_to_freeze):
+    def decorator(func):
+        def decorated(*args, **kwargs):
+            datetime_module.datetime = FakeDatetime
+            FakeDatetime.set_frozen_datetime(datetime_to_freeze)
+            func(*args, **kwargs)
+            datetime_module.datetime = datetime
+        return decorated
+    return decorator

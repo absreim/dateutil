@@ -51,3 +51,7 @@ class UtilsTest(unittest.TestCase):
         d2 = datetime(2015, 12, 31)
 
         self.assertTrue(within_delta(d2, d1, timedelta(days=-1)))
+
+    @utils.freeze_time(datetime(2014, 12, 15, 1, 21, 33, 4003))
+    def testBuiltinFreezeTime(self):
+        self.assertEqual(datetime.now(), datetime(2014, 12, 15, 1, 21, 33, 4003))
