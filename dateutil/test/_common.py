@@ -277,15 +277,23 @@ class UnsetTzClass(object):
 UnsetTz = UnsetTzClass()
 
 
-def freeze_time(time_to_freeze, tz_offset):
+def freeze_time(time_to_freeze, tz_offset=None):
     frozen_datetime = time_to_freeze if tz_offset is None else datetime(
         time_to_freeze.year, time_to_freeze.month, time_to_freeze.day,
         time_to_freeze.hour, time_to_freeze.minute, time_to_freeze.second,
         time_to_freeze.microsecond, tzinfo=timezone(hours=tz_offset)
     )
 
+    class FakeDatetime(datetime):
+        def __new__(cls, *args, **kwargs):
+            return datetime.__new__(datetime, *args, **kwargs)
+
+        @classmethod
+        def now(cls):
+            return frozen_datetime
+
     def wrapper(func):
-        @patch('datetime.now', lambda: frozen_datetime)
+        @patch('__main__.datetime', FakeDatetime)
         def wrapped(*args, **kwargs):
             return func(*args, **kwargs)
 
