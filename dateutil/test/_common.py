@@ -1,4 +1,6 @@
 from __future__ import unicode_literals
+from datetime import datetime, timezone
+from unittest.mock import patch
 import os
 import time
 import subprocess
@@ -273,3 +275,20 @@ class UnsetTzClass(object):
 
 
 UnsetTz = UnsetTzClass()
+
+
+def freeze_time(time_to_freeze, tz_offset):
+    frozen_datetime = time_to_freeze if tz_offset is None else datetime(
+        time_to_freeze.year, time_to_freeze.month, time_to_freeze.day,
+        time_to_freeze.hour, time_to_freeze.minute, time_to_freeze.second,
+        time_to_freeze.microsecond, tzinfo=timezone(hours=tz_offset)
+    )
+
+    def wrapper(func):
+        @patch('datetime.now', lambda: frozen_datetime)
+        def wrapped(*args, **kwargs):
+            return func(*args, **kwargs)
+
+        return wrapped
+
+    return wrapper
