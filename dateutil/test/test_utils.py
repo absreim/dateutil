@@ -1,30 +1,47 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from datetime import timedelta, datetime
+from datetime import timedelta, datetime, timezone
+from ._common import get_frozen_datetime
 
 import unittest
+from unittest.mock import patch
 
 from dateutil import tz
 from dateutil import utils
 from dateutil.tz import UTC
 from dateutil.utils import within_delta
 
-from freezegun import freeze_time
-
 NYC = tz.gettz("America/New_York")
 
 
 class UtilsTest(unittest.TestCase):
-    @freeze_time(datetime(2014, 12, 15, 1, 21, 33, 4003))
+    @patch(
+        'dateutil.utils.datetime',
+        new=get_frozen_datetime(datetime(2014, 12, 15, 1, 21, 33, 4003))
+    )
     def testToday(self):
         self.assertEqual(utils.today(), datetime(2014, 12, 15, 0, 0, 0))
 
-    @freeze_time(datetime(2014, 12, 15, 12), tz_offset=5)
+    @patch(
+        'dateutil.utils.datetime',
+        new=get_frozen_datetime(
+            datetime(2014, 12, 15, 12,
+                     tzinfo=timezone(offset=timedelta(hours=-5))
+            )
+        )
+    )
     def testTodayTzInfo(self):
         self.assertEqual(utils.today(NYC),
                          datetime(2014, 12, 15, 0, 0, 0, tzinfo=NYC))
 
-    @freeze_time(datetime(2014, 12, 15, 23), tz_offset=5)
+    @patch(
+        'dateutil.utils.datetime',
+        new=get_frozen_datetime(
+            datetime(2014, 12, 15, 23,
+                     tzinfo=timezone(offset=timedelta(hours=-5))
+            )
+        )
+    )
     def testTodayTzInfoDifferentDay(self):
         self.assertEqual(utils.today(UTC),
                          datetime(2014, 12, 16, 0, 0, 0, tzinfo=UTC))
